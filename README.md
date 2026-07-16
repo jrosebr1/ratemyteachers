@@ -8,7 +8,7 @@ This is the archived source, published as-is.
 
 ## About
 
-**Reactor was the core engine behind RateMyTeachers.com, rewritten from scratch in PHP on the CodeIgniter framework.**
+**This repo was the core engine behind RateMyTeachers.com, rewritten from scratch in PHP on the CodeIgniter framework.**
 
 RateMyTeachers was a site where students and parents rated/reviewed their teachers and schools. 
 

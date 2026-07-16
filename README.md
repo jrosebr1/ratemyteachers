@@ -160,7 +160,7 @@ I wrote this as an employee of RateMyTeachers. I spent roughly six years with th
 
 RateMyTeachers was acquired a long time ago. The acquirer ran RateMyTeachers alongside another property (a rehab-referral site, if I remember right, but has since shut down), _and as far as I can tell, nobody runs this codebase anymore._
 
-I'm publishing this repo in good faith, as a historical archive, and not as anything I claim to own. **If you hold rights to this code and would rather it not be here, reach out and I'll take it down.**
+I'm publishing this repo in good faith (the website is nearly 20 years old at this point), as a historical archive, and not as anything I claim to own. **If you hold rights to this code and would rather it not be here, reach out and I'll take it down.**
 
 That also means there's no open-source license on this one. The code isn't mine to relicense.
 

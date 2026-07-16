@@ -1,0 +1,14 @@
+#qscroller {
+	width: 550px;
+	height: 25px;
+}
+
+.qhide {
+	visibility: hidden;
+	position: absolute;
+	top: -400px;
+}
+
+.qslide {
+	
+}

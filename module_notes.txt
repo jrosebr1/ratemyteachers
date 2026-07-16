@@ -1,0 +1,6 @@
+- curse word filter
+
+- finish implementing getStateInfoFromCity() in stateloader.php
+- what is the purpose of the 'LIKE' in the getCityInfo() method?
+
+- add search log functionality to log search queries (and then add it as a KPI)

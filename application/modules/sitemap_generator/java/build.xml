@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project name="Sitemap" basedir="." default="compile">
+	<description>
+		Adrian Rosebrock
+		RateMyTeachers.com
+		Sitemap Generator
+		The Sitemap Generator module takes two files as input:
+			1. The combined file of Organization/Person information.
+			2. The file of Rating information.
+		The output of the Sitemap Generator (depending on which configurations
+		were used to generate the sitemap dump), will be at most four files:
+			1. An output file for the Organizations.
+			2. An output file for the Persons.
+			3. An output file for the Ratings.
+			4. An output file for the Request page in between the Person and
+			   Rating page.
+	</description>
+
+	<!-- global properties for this build file -->
+	<property name="source.dir" location="src"/>
+	<property name="build.dir" location="bin"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="doc.dir" location="doc"/>
+
+	<!-- setup the classpath information -->
+    <path id="Sitemap.classpath">
+        <pathelement location="${build.dir}"/>
+    </path>
+	
+	<!-- setup some of the directories needed for the project -->
+	<target name="init" description="setup project directories">
+	    <mkdir dir="${build.dir}"/>
+	</target>
+
+	<!-- compile the project -->
+	<target name="compile" depends="init" description="compile the project">
+        <javac srcdir="${source.dir}" destdir="${build.dir}" includeantruntime="false">
+            <classpath refid="Sitemap.classpath"/>
+        </javac>
+	</target>
+	
+	<!-- generate sitemap files -->
+	<target name="generate" description="generates the sitemap files">
+		<java dir="${build.dir}" classname="sitemap_generator.SitemapBuilder" fork="yes">
+            <classpath refid="Sitemap.classpath"/>
+			<arg line="../../config/us.config"/>
+		</java>
+	</target>
+</project>

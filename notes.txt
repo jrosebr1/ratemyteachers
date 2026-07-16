@@ -1,0 +1,42 @@
+- when running CodeIgniter CLI on OSX, the OSX version of PHP will not work. use this instead:
+/Applications/MAMP/bin/php/php5.3.6/bin/php index.php rss_feed_controller generate_homepage_feed
+
+- on the current site, flagging a rating only changes to fields: sets RStatus=-1 and RErrorMsg to the supplied reason (same for rebuttals)
+
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+	application/config/core.php
+	application/config/routes.php
+	application/controllers/flag_rating_controller.php
+	application/controllers/flag_rebuttal_controller.php
+	application/controllers/organization_controller.php
+	application/controllers/person_rating_controller.php
+	application/controllers/person_request_controller.php
+	application/controllers/person_review_controller.php
+	application/controllers/rating_review_controller.php
+	application/helpers/package_loader_helper.php
+	application/modules/core/libraries/organization.php
+	application/modules/drilldown/config/config.php
+	application/modules/drilldown/libraries/drilldownbuilder.php
+	application/modules/drilldown_generator/config/config.php
+	application/modules/drilldown_generator/libraries/citydrilldown.php
+	application/modules/drilldown_generator/scripts/create_drilldown.sh
+	application/modules/rss_feeds/config/config.php
+	application/modules/sitemap/config/config.php
+	application/modules/sitemap/controllers/sitemap_controller.php
+	application/modules/sitemap/libraries/sitemaploader.php
+	application/modules/sitemap/libraries/stateloader.php
+	application/modules/sitemap_generator/config/config.php
+	application/modules/sitemap_generator/config/ie.config
+	application/views/common/breadcrumb.php
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+	application/modules/sitemap/libraries/cityloader.php
+	application/modules/sitemap/libraries/sitemapdrilldown.php
+	application/modules/sitemap/views/
+	application/views/show_sitemap.php

@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+ 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Legal | <?php echo $this->config->item("core.sitename"); ?></title>
+		<?php $this->load->view("common/head_libs"); ?>
+	</head>
+	<body>
+		<?php $this->load->view("common/header"); ?>
+		
+		<h1>Legal Page</h1>
+		
+		<?php $this->load->view("common/footer"); ?>
+	</body>
+</html>
+ 

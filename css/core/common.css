@@ -1,0 +1,7 @@
+/*
+ *	Define the CSS for the modal window. 
+ */
+.sb_success, .sb_error, .sb_error_list
+{
+	display: none;
+}

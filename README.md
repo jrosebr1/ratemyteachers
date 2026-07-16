@@ -1,4 +1,4 @@
-# Reactor
+# RateMyTeachers
 
 Archive of the Reactor project, the ground-up rewrite of [RateMyTeachers.com](https://web.archive.org/web/20130314062423/http://www.ratemyteachers.com/) (archived website), circa 2011–2013.
 

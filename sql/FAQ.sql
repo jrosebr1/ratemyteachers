@@ -1,0 +1,91 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.7deb6
+-- http://www.phpmyadmin.net
+--
+-- Host: db1
+-- Generation Time: Dec 23, 2011 at 02:56 PM
+-- Server version: 5.1.49
+-- PHP Version: 5.2.6-1+lenny13
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `teachers`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FAQ`
+--
+
+CREATE TABLE IF NOT EXISTS `FAQ` (
+  `Type` enum('main','admin') NOT NULL DEFAULT 'main',
+  `Category` varchar(255) NOT NULL DEFAULT '',
+  `Question` varchar(255) NOT NULL DEFAULT '',
+  `Answer` text NOT NULL,
+  PRIMARY KEY (`Type`,`Category`,`Question`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `FAQ`
+--
+
+INSERT INTO `FAQ` (`Type`, `Category`, `Question`, `Answer`) VALUES
+('main', 'General', 'Do I have to give you my name or email address? I don''t want any trouble from my teachers or the administration.', 'You are not required to log in or enter your name or email address if you are a student and are rating a middle school or high school teacher.  If you are a parent, you must login to rate on the Parent part of the site. If you are rating an elementary teacher, either as a parent or former student, you must have an account (free) and login to rate.'),
+('main', 'General', 'Don''t students use this site just to get even with their teachers? Aren''t most of the ratings negative?', 'Absolutely not. You might be surprised to learn that about 60% of the ratings are positive.'),
+('main', 'General', 'How do I ''RateMyTeachers''?', 'We''ve tried to make this site as easy to use as possible. You can select your school or individual teacher from the front page. For the US, you then have two ways of finding your school. You can enter the first 3 letters of your school''s name or go to your state and find your school. For Canada, once you click on your province, you will get a list of all schools in that province. If your teacher is listed on your school''s page, click on their name and rate them. If your teacher is not listed, you can add them and rate them.'),
+('main', 'General', 'How do the scores work? I don''t think Easiness is a good thing - why is it part of the rating?', 'The Overall Quality rating is the average of a teacher''s Helpfulness and Clarity ratings, and is what determines the type of "smiley face" that the teacher receives. A teacher''s Easiness rating is NOT used when computing the Overall Quality rating, since an Easiness of 5 may actually mean the teacher is TOO easy. Please go to <a style="" href="/info/raterules">Rate Rules</a> for more information on the ratings.'),
+('main', 'General', 'How much does this website cost me?', 'Nothing! The site is absolutely free.'),
+('main', 'General', 'How soon are my ratings posted?', 'Ratings are reviewed several times a day. Your ratings should be posted that day. They should usually be reviewed within 2 days, although due to slight backups they may take slightly longer at this point in time.'),
+('main', 'General', 'I gave a teacher a Cool vote but no sunglasses showed up. What gives?', 'It depends on how many overall Cool or Not Cool ratings a teacher has. If they have 2 Cool and 2 Not Cool, no sunglasses are shown. If they have 5 Cool and 2 Not Cool, the sunglasses will appear.'),
+('main', 'General', 'I know a business that I think would like to advertise on the site. Are you interested?', 'Of course!!! Contact us at advertising[at]ratemyteachers.com and we will discuss our rates for banner ads and sponsorship opportunities. '),
+('main', 'General', 'I think I would like to be my school''s moderator. What do they do and how do I sign up?', 'The School Admins handle the ratings for their school on a daily basis. This means reviewing, accepting, deleting - everything about the ratings. They also accept new teachers and make corrections (such as names) for existing teachers. They become part of the RateMyTeachers staff and work with the site owners and operators. To become an Admin, you must be a student at that school and have a RMT account. You can create an account from the link on your school''s page. After you have created your account, click on the ''Want to be this school''s admin?'' link on your school''s page and send us an email with your account email and school. If you don''t see this link on your school''s page, it means there is already an admin for your school (Sorry!).'),
+('main', 'General', 'I think it is only fair that there be RateMyStudents and RateMyParents sites. After all, I have a lot of things to say about my students and their parents. When will you start those sites?', 'NEVER!! We will never have sites for rating students or parents. Teachers affect the lives of thousands of students; the reverse is not true. Anyone can start a web site. If you really think this is a good idea, then, by all means, go for it.'),
+('main', 'General', 'I''m having trouble logging into my member''s page and/or adding ratings. What should I do?', 'RateMyTeachers uses cookies for its login process, so please make sure your browser has cookies enabled. If you are using Internet Explorer, click Tools, then Internet Options, then Privacy, and make sure the vertical slider is on Medium High or lower.  You can find more detailed instructions on <a style="" href="/info/cookies">this page</a>.'),
+('main', 'General', 'I''ve seen ''Want to login or Create an account?'' on my school''s page. What''s that all about?', 'NO ONE has to have an account to use the site. Creating an account will allow you to track and edit your ratings. After your account is created, you can login to it. We get quite a few emails from people who made a mistake in rating their teacher and want us to change them. WE don''t change someone''s rating. We can delete the entire rating or delete the comment, but we won''t change them. This option gives the user a way to make sure their ratings are correct. We have a lot of changes planned. Some of them will be for members only, so if you want to use the site to its fullest, be sure and create an account.'),
+('main', 'General', 'Some of my comments got deleted. My teacher really is a fat, ugly jerk. Why can''t I say that? What comments are OK?', 'You are right. We are pretty picky about what gets posted and have some strict guidelines. You can find the guidelines on <a href="/info/raterules" class="map">this page</a>. Comments should be about their teaching, not their physical appearance. Every rating is reviewed before it is posted, and we reserve the right to delete comments OR an entire rating.'),
+('main', 'General', 'What do teachers think of this site?', 'Well, that depends on the teacher!! We get a lot of emails from teachers telling us they like the site, and we''ve even had some telling us how the site has helped them. We also get some pretty hateful emails telling us how inappropriate the site is, how they are going to shut us down, etc.'),
+('main', 'General', 'What if I see a rating that I think should be reviewed again? I know you said you review all ratings, but what if you miss one that is not OK?', 'You''re right - every now and then a bad rating gets by us. After each rating you will see a small button which reads "(report)". When you click on that button, the rating is sent back to us to review again. If it really should not have been accepted, we will handle it. If the rating really is OK, we just approve it again.'),
+('main', 'General', 'What if I see an error with a teacher, like if their name is spelled wrong or even if they aren''t a real teacher?', 'After you click on a teacher, you will see ''Report error with this teacher listing'' at the bottom of the page. Just click on that link and tell us what is wrong.'),
+('main', 'General', 'What is the purpose of this site?', 'The purpose of the site is to be a resource for students. Where else can you find out what others think of an instructor? Is he/she a good teacher, do they challenge you, are they fair? When you have the option of choosing a teacher, wouldn''t you really like some information? It also gives you, the user, a place to voice your opinion. It gives you a place to make a difference in your education.'),
+('main', 'General', 'What is your privacy policy?', 'You can <a class="map" href="/info/privacy">view our Privacy Policy here</a>.'),
+('main', 'General', 'Who are you and why do you have this site?', 'We are just common, ordinary people who believe that students are the CUSTOMERS of teachers/schools/administrators - and we believe they absolutely have a right to voice their opinions.'),
+('main', 'General', 'Who can rate? Is it limited to students?', 'We prefer you only rate teachers of whom you have first-hand knowledge. It is not possible to verify that a rater had a particular teacher, so use caution in making decisions based on isolated ratings.  Anyone can rate - students, the teacher, other teachers, parents, dogs, cats, etc. '),
+('main', 'General', 'Why do the menu buttons refuse to load and certain pages show up white?', 'Internet security programs such as Microsoft AntiSpyware and Norton Internet Security may have blocked RateMyTeachers because it feels it is unsafe to visit.  If you have internet security software installed on your computer, make sure it is not blocking access to this site.'),
+('main', 'General', 'You guys didn''t answer my question. How can I contact you?', 'Click on the Contact link at the bottom of the page. We read EVERY email and respond to almost all of them. (No, we don''t respond to threats to shut us down!)'),
+('admin', 'General', 'Can I be the Moderator of a high school that I graduated from?', 'Yes, if you were the Moderator and then graduated you can stay on as moderator.'),
+('admin', 'General', 'Can I/you remove my Moderator access?', 'Yes! You can remove your own moderator access if you wish to no longer be one on the moderator settings page. Please be careful when using this feature and only use it if you are serious.'),
+('admin', 'General', 'Can more than one person moderate a school?', 'No. Only one person can be a school''s moderator. If the workload becomes too much for you, you should consider giving up the job to another student at your school.'),
+('admin', 'General', 'How can I contact you?', 'Email a Staff Member from the contact list at the  bottom of the moderator page. Choose ONE, not all, of us to email.'),
+('admin', 'General', 'How can I get a moderator message to display on my schools page?', 'This feature is only open to trusted moderators. If you are a trusted moderator you can add and edit your moderator message on the manage schools page.'),
+('admin', 'General', 'I am going away, can you watch things for me?', 'Sure, we can make sure new ratings for your school get taken care of while you are gone. All we ask that you do is set yourself in vacation mode, this can be done on the moderator settings page. If you require more then three weeks email a master admin.'),
+('admin', 'General', 'What are the different school moderator "ranks"?', '<em>Regular or Beginner Moderator:</em> New moderator to RMT<br>\r\n<em>Trusted Moderator:</em> Been with RMT for 3 months, and does pooled ratings (ratings from schools without moderators).<br>\r\n<em>Master Admin:</em> Looks over and manages school moderators, reviews a "master pool" of ratings and adds new moderators and schools.'),
+('admin', 'General', 'What is a trusted moderator? And how do I become one?', 'Trusted moderators are the moderators who handle ratings and teachers for schools without moderators. To become one you need to have been a moderator for 3 months, done at least 20 ratings and be reviewed by a master admin. If you are accepted as a trusted moderator you will receive an email. Please note that filling both criteria does not necessarily mean you will be trusted. A Master Admin will trust you when we are confident you are ready for the duty.'),
+('admin', 'General', 'Why do the number of pooled ratings on the main moderator page not correspond with the actual number of ratings waiting to be approved?', 'During peak hours, there are many moderators doing pooled ratings. Therefore, the number of actual ratings is constantly changing, and the server cannot keep up with it. Sometimes you may see a "0", but there are ratings waiting to be approved. This is normal.'),
+('admin', 'General', 'Why has my approved ratings count decreased?', 'You approved ratings count may have decreased if a rating you approved was flagged, or the rater changed their comment. If this is so, the rating will then be sent back into the pool.'),
+('admin', 'General', 'Why is there an abnormal amount of pooled ratings waiting to be done?', 'This is most likely because a moderator was removed, and they had accepted many bad comments. Therefore, all of their ratings have been sent to be re-reviewed. This also may cause a build up of new ratings. Please take your time while doing these ratings. '),
+('admin', 'Other', 'I want be a master admin. How?', 'If we are looking for new master admins there will be an application form in the moderator forums.'),
+('admin', 'Other', 'What should I do about constant abusers of the site?', 'If you have a feeling that someone is abusing the site (such as submitting multiple ratings or constantly adding bogus teachers), email a master admin and supply an example of a rating or teacher that was submitted by that person. It will be investigated and could lead to the user being banned from the site.'),
+('admin', 'Other', 'What should I do if my school is listed twice?', 'E-mail a master admin with the URL''s of both schools, and tell us which one is the correct name so we can combine them into one school.'),
+('admin', 'Ratings', 'Can I approve ratings in other languages?', 'If you see a comment in a language other than English, and you don''t understand it, you must RC it. If you are 100% sure you know what it means, you can Approve/RC/Delete it as usual. IMPORTANT: you can choose what language comments you want to screen on your moderator settings page.'),
+('admin', 'Ratings', 'Can we edit comments?', 'No, it is RateMyTeachers.com''s policy to not allow the editing of comments. Even if there are only two words at the end of a comment that are bad or initials, you must RC it. '),
+('admin', 'Ratings', 'If someone flags a rating saying "I didn''t mean that", can you remove it for them?', 'No, you would have no way to verify that it was them who posted. If they were logged on, they can remove their rating themselves in their member area. Otherwise, unless it’s something really obvious (like says wrong teacher in comment, or refers to male teacher with a female name) you''ll have to leave it be. '),
+('admin', 'Ratings', 'What do I do if I''m unsure about a comment?', 'The best thing to do is RC the comment.'),
+('admin', 'Ratings', 'What does "Report Moderator" mean?', 'When someone flags a comment, you should see the "report moderator" option added beside the comment. If the comment is against the rules, you should click "report moderator". This will report the moderator who accepted the comment originally. After choosing that, make sure you deal with the comment accordingly.'),
+('admin', 'Ratings', 'What does the message "SYSTEM: Action undone by webmaster." mean?', 'This message means the comment was originally RC’ed or deleted but a master admin disagrees that it should have been removed; most of the time any comment with this message is an OK comment. If you see this message but disagree it should be OK’ed email a master admin.'),
+('admin', 'Ratings', 'What happens if a comment sounds threatening?', 'If a comment has a threatening tone to it, you should e-mail a master admin with the teacher''s name and an exact quote of the comment immediately. Make sure to remove the comment. It will still be in our records even after you remove it.'),
+('admin', 'Ratings', 'What should I do if I accidentally approve a bad rating in the pool?', 'You can click on the ''Redo last ratings'' link or you can e-mail a master admin immediately. Provide the rating you approved (paraphrasing is acceptable, if you forgot "she smells like moldy cheese", it''s alright to say "she smells bad").'),
+('admin', 'Ratings', 'What should I do when a teacher flags a rating?', 'Teachers can flag ratings. Only RC or Delete ratings that are against the rules. Other than that, if a teacher says a rating is "wrong", it is OK to keep it, as long as it follows the rules.'),
+('admin', 'Ratings', 'Why do some ratings at my school say "This comment is waiting for approval" although they are not in my rating review page?', 'If a comment has been flagged, you will check it, then it will be run by a master admin for final approval. Until it is approved by a master admin, the rating will appear as "waiting for approval."'),
+('admin', 'Teachers', 'Can I approve student teachers?', 'Use your best judgment. Some student teachers do not teach, while others may become an involved part of class. Short-term student teachers are probably not worth adding, although long term ones should be considered. '),
+('admin', 'Teachers', 'What do I do with retired teachers or teachers that left the school?', 'Please remove all retired teachers from your schools page.'),
+('admin', 'Teachers', 'What happens if there are two of the same teachers, under different names?', 'Delete the name with the least comments.'),
+('admin', 'Teachers', 'What should I do with teachers who have recently died?', 'Teachers who have recently died should remain listed for approx four months after passing away. This allows students and colleagues to leave last comments for them.'),
+('admin', 'Teachers', 'What types of school staff can be added to the site?', 'This site is mainly for teachers. Administrators can be added, but other than that, you should steer clear of adding Secretaries, Teacher assistants, Janitors, and Cafeteria staff since they do not normally affect your school work.');

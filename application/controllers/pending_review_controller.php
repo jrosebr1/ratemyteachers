@@ -1,0 +1,1 @@
+../modules/pending_review_remover/controllers/pending_review_controller.php

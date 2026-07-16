@@ -1,0 +1,1 @@
+../modules/sitemap/controllers/sitemap_controller.php

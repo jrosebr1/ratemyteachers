@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+# redirect index.php and default controller to "/"; this is to prevent duplicated content
+RewriteRule ^(site(/index)?|index(\.php)?)/?$ / [L,R=301]
+
+# remove /index/ segment in the URL
+RewriteRule ^(.*)/index/? $1 [L,R=301]
+
+# remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)(/+)$ $1 [L,R=301]
+
+# remove multiple slashes in between segments
+RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
+RewriteRule . %1/%2 [R=301,L]
+
+# send all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index.\.php|images|css|js)
+RewriteRule ^(.*)$ index.php/$1 [L]

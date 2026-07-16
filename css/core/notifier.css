@@ -1,0 +1,34 @@
+/*	
+ *	Define the CSS needed for the notifier slider. In order for the
+ *	notifier to be flush with the browser window (in terms of bumping
+ *	up against the left, right, and top), then the 'body' element
+ *	style should have a 'margin' and 'padding' of 0px.
+ */
+#notifier
+{
+	width: 100%;
+	height: 0px;
+	background: url(/images/notifier_bg.png);
+	border-bottom: 1px solid #A0A0A0;
+	position: absolute;
+	z-index: 9999;
+}
+ 
+#notifier #message
+{
+	padding-top: 30px;
+	text-align: center;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #51515A;
+	display: none;
+}
+ 
+#notifier #close
+{
+ 	right: 30px;
+ 	top: 27px;
+  	position: absolute;
+	display: none;
+	cursor: pointer;
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project name="Charlie" basedir="." default="compile">
+	<description>
+		Adrian Rosebrock
+		RateMyTeachers.com
+		Rating Auto-Moderator
+	</description>
+
+	<!-- global properties for this build file -->
+	<property name="source.dir" location="src"/>
+	<property name="build.dir" location="bin"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="doc.dir" location="doc"/>
+
+	<!-- setup the classpath information -->
+    <path id="Charlie.classpath">
+        <pathelement location="${build.dir}"/>
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+    </path>
+	
+	<!-- setup some of the directories needed for the project -->
+	<target name="init" description="setup project directories">
+	    <mkdir dir="${build.dir}"/>
+	</target>
+
+	<!-- compile the project -->
+	<target name="compile" depends="init" description="compile the project">
+        <javac srcdir="${source.dir}" destdir="${build.dir}" includeantruntime="false">
+            <classpath refid="Charlie.classpath"/>
+        </javac>
+	</target>
+	
+	<!-- train the classifier -->
+	<target name="train" description="train the classifier">
+		<java dir="${build.dir}" classname="charlie.Trainer" fork="yes">
+            <classpath refid="Charlie.classpath"/>
+			<arg line="../data/output_data/output.arff ../data/features/features.txt ../data/model/classifier.out"/>
+		</java>
+	</target>
+
+	<!-- run the classifier on the staging server -->
+	<target name="classify-staging" description="staging classifier">
+		<java dir="${build.dir}" classname="charlie.Classify" fork="yes">
+            <classpath refid="Charlie.classpath"/>
+			<arg line="../data/model/classifier.out ../data/config/staging.config 10"/>
+		</java>
+	</target>
+
+	<!-- run the classifier on the production server -->
+	<target name="classify-production" description="production classifier">
+		<java dir="${build.dir}" classname="charlie.Classify" fork="yes">
+            <classpath refid="Charlie.classpath"/>
+			<arg line="../data/model/classifier.out ../data/config/production.config 10"/>
+		</java>
+	</target>
+
+	<!-- debug the classifier -->
+	<target name="classify-debug" description="debug classifier">
+		<java dir="${build.dir}" classname="charlie.Classify" fork="yes">
+            <classpath refid="Charlie.classpath"/>
+			<arg line="../data/model/classifier.out ../data/config/debug.config 10"/>
+		</java>
+	</target>
+
+	<!-- cleanup by deleting build directory back backup (*~) files -->
+	<target name="clean" description="cleanup workspace">
+		<delete dir="{build.dir}"/>
+		<delete>
+			<fileset defaultexcludes="no" dir="${source.dir}" includes="**/*~"/>
+		</delete>
+	</target>
+</project>

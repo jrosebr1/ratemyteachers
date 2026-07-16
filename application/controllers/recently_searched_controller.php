@@ -1,0 +1,1 @@
+../modules/recently_searched/controllers/recently_searched_controller.php

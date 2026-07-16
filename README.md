@@ -1,5 +1,7 @@
 # RateMyTeachers
 
+<img alt="RateMyTeachers Homepage, circa 2013" src="screenshots/ratemyteachers-homepage.png"/>
+
 Archive of the Reactor project, the ground-up rewrite of [RateMyTeachers.com](https://web.archive.org/web/20130314062423/http://www.ratemyteachers.com/) (archived website), circa 2011–2013.
 
 This is the archived source, published as-is.
@@ -179,3 +181,9 @@ Not many teenagers get to say they hand-coded, from scratch, a platform that was
 I did that.
 
 And, given the era, the code was pretty great too.
+
+## Screenshots
+
+<img alt="RateMyTeachers Homepage Full, circa 2013" src="screenshots/ratemyteachers-homepage-full.png"/>
+
+<img alt="RateMyTeachers School Page Full, circa 2013" src="screenshots/ratemyteachers-school-page-full.png"/>
